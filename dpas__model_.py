@@ -30,8 +30,8 @@ from sklearn.metrics import f1_score,precision_score, recall_score
 import time
 import cmath
 
-df = pd.read_csv("Dataset\Training.csv")
-test_df = pd.read_csv("Dataset\Testing.csv")
+df = pd.read_csv("Training.csv")
+test_df = pd.read_csv("Testing.csv")
 
 """# Data Cleaning"""
 
@@ -83,7 +83,7 @@ joblib.dump(knn, 'knn_model.joblib')
 model = joblib.load('knn_model.joblib')
 
 #Importing test data
-test_df = pd.read_csv("Dataset\Testing.csv")
+test_df = pd.read_csv("Testing.csv")
 
 x_test = test_df.drop('prognosis',axis=1)
 y_test = test_df['prognosis']
